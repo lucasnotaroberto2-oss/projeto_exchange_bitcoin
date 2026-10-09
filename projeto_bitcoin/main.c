@@ -1,21 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "login.h"
+#include "funcoes.h"
 
 int inicio(void);
 
 int main(int argc, char *argv[]) {
 	int entrada;
 	while(1){
-		printf("digite\n1-login\n2-cadastro\n");
+		printf("digite\n1-login\n2-sair\n");
 		scanf("%d",&entrada);
-		if(entrada == 1 || entrada ==2){
-			if(entrada == 1){
-				//funcao de login
-				login();
-			}
-			//funcao de cadastro   //cadastro sera chamado escolhendo 2 ou não
+		if(entrada == 1){
+
+            char nome[20];
+			char cpf[11];
+			char senha[6];
+			
+			login(nome,cpf,senha);
+			
 			inicio();
+		}
+		else if(entrada == 2){
+			break;
 		}
 		else{
 			printf("opcao fora de alcance!");
@@ -56,3 +61,7 @@ int inicio(void){
 		}
 	}
 }
+
+//proximos passos-
+//1 - fazer verificação de cpf ja existente
+//2 - incluir nome,cpf e senha no arquivo de texto "usuarios"

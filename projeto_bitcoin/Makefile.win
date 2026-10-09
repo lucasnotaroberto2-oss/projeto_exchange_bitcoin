@@ -1,28 +1,33 @@
 # Project: Projeto_bitcoin
-# Makefile created by Dev-C++ 5.11
+# Makefile created by Dev-C++ 5.0.0.4
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o usuarios.o
-LINKOBJ  = main.o usuarios.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
-CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+RES      = 
+OBJ      = main.o login.o $(RES)
+LINKOBJ  = main.o login.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/lib/gcc" -static-libstdc++ -static-libgcc  
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/include" 
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/include" 
 BIN      = Projeto_bitcoin.exe
-CXXFLAGS = $(CXXINCS) 
-CFLAGS   = $(INCS) 
-RM       = rm.exe -f
+CXXFLAGS = $(CXXINCS)  
+CFLAGS   = $(INCS)  
+RM       = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
 
-all: all-before $(BIN) all-after
+all: all-before Projeto_bitcoin.exe all-after
+
 
 clean: clean-custom
 	${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
-	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+	$(CC) $(LINKOBJ) -o "Projeto_bitcoin.exe" $(LIBS)
 
 main.o: main.c
 	$(CC) -c main.c -o main.o $(CFLAGS)
+
+login.o: login.c
+	$(CC) -c login.c -o login.o $(CFLAGS)

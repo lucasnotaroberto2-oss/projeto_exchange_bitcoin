@@ -30,17 +30,7 @@ CompilerSet=0
 CompilerSettings=00000000000000000000000
 
 [Unit2]
-FileName=login.h
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit3]
-FileName=cadastro.h
+FileName=login.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -77,4 +67,26 @@ ProductName=
 ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
+
+[Unit4]
+FileName=usuarios.txt
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
+FileName=funcoes.h
+
+[Unit3]
+FileName=funcoes.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
 
