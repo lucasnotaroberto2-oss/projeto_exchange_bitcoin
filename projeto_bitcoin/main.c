@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include "funcoes.h"
 
 int inicio(void);
@@ -11,11 +13,8 @@ int main(int argc, char *argv[]) {
 		scanf("%d",&entrada);
 		if(entrada == 1){
 
-            char nome[20];
-			char cpf[11];
-			char senha[6];
+			int x = login();
 			
-			login(nome,cpf,senha);
 			
 			inicio();
 		}
