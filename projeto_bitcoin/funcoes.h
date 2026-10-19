@@ -1,1 +1,2 @@
+int cadastro();
 int login();
