@@ -1,9 +1,9 @@
 [Project]
 FileName=Projeto_bitcoin.dev
 Name=Projeto_bitcoin
-UnitCount=3
+UnitCount=4
 Type=1
-Ver=1
+Ver=2
 ObjFiles=
 Includes=
 Libs=
@@ -28,6 +28,8 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=00000000000000000000000
+LogOutput=
+LogOutputEnabled=0
 
 [Unit2]
 FileName=login.c
@@ -69,13 +71,14 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit4]
-FileName=usuarios.txt
+FileName=cadastro.c
 Folder=
 Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
+CompileCpp=0
 
 [Unit5]
 FileName=funcoes.h
