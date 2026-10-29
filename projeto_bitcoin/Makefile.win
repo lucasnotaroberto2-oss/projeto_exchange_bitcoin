@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o login.o cadastro.o limpar_buffer.o
-LINKOBJ  = main.o login.o cadastro.o limpar_buffer.o
+OBJ      = main.o login.o cadastro.o limpar_buffer.o cria_conta.o mostra_usuario.o consulta_saldo.o deposito.o verifica_senha.o saque.o
+LINKOBJ  = main.o login.o cadastro.o limpar_buffer.o cria_conta.o mostra_usuario.o consulta_saldo.o deposito.o verifica_senha.o saque.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -35,3 +35,21 @@ cadastro.o: cadastro.c
 
 limpar_buffer.o: limpar_buffer.c
 	$(CC) -c limpar_buffer.c -o limpar_buffer.o $(CFLAGS)
+
+cria_conta.o: cria_conta.c
+	$(CC) -c cria_conta.c -o cria_conta.o $(CFLAGS)
+
+mostra_usuario.o: mostra_usuario.c
+	$(CC) -c mostra_usuario.c -o mostra_usuario.o $(CFLAGS)
+
+consulta_saldo.o: consulta_saldo.c
+	$(CC) -c consulta_saldo.c -o consulta_saldo.o $(CFLAGS)
+
+deposito.o: deposito.c
+	$(CC) -c deposito.c -o deposito.o $(CFLAGS)
+
+verifica_senha.o: verifica_senha.c
+	$(CC) -c verifica_senha.c -o verifica_senha.o $(CFLAGS)
+
+saque.o: saque.c
+	$(CC) -c saque.c -o saque.o $(CFLAGS)

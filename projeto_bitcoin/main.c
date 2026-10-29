@@ -4,22 +4,23 @@
 #include <ctype.h>
 #include "funcoes.h"
 
-int inicio();
+int inicio(int id);
 
 int main(int argc, char *argv[]) {
-	int entrada;
+	int entrada,id;
 	while(1){
 		printf("\n1. Cadastrar conta\n2. Fazer login\n0. Sair\n");
 		scanf("%d",&entrada);
 		if(entrada == 1 || entrada == 2){
 			limpar_buffer();
 			if(entrada == 1){
-				cadastro();
+				id = cadastro();
+				cria_conta(id);
 			}
 			else if(entrada == 2){
-				login();
+				id = login();
 			}
-			inicio();
+			inicio(id);
 		}
 		else if(entrada == 0){
 			printf("\nObrigado por usar o programa!\n");
@@ -34,22 +35,30 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-int inicio(void){
+int inicio(id){
 	int entrada;
 	while(1){
+		
+		mostra_usuario(id);
+		
 		printf("\n1. Consultar saldo\n2. Consultar extrato\n3. Depositar\n4. Sacar\n5. Comprar Criptomoedas\n6. Vender Criptomoedas\n7. Atualizar Cotacao\n8. Voltar ao inicio\n");
 		scanf("%d",&entrada);
+		limpar_buffer();
+		
 		if(entrada == 1){
-			//funcao para consulta de saldo
+			if(!verifica_senha(id)){
+				continue;
+			}
+			consulta_saldo(id);
 		}
 		else if(entrada == 2){
 			//funcao para consulta de extrato
 		}
 		else if(entrada == 3){
-			//funcao para depositos
+			deposito(id);
 		}
 		else if(entrada == 4){
-			//funcao para saque
+			saque(id);
 		}
 		else if(entrada == 5){
 			//funcao para compra

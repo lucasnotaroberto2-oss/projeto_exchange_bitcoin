@@ -64,18 +64,21 @@ int cadastra_id(void){
 	return id;	
 }
 
+//função principal para cadastro de novos usuarios
+
 int cadastro(){
 	char nome[50],cpf[12],senha[7];
 	
 	printf("\nDigite seu nome: ");
-	fgets(nome, sizeof(nome), stdin);
+	fgets( nome, sizeof(nome), stdin);
 	nome[strcspn(nome, "\n")] = '\0';
 	
 	while(1){
 		printf("\nDigite seu CPF: ");
-		fgets(cpf, sizeof(cpf), stdin);
+		fgets( cpf, sizeof(cpf), stdin);
 		cpf[strcspn(cpf, "\n")] = '\0';
 		
+		//função para validar cpf(11 caracteres)
 		if(valida_cpf(cpf)){
 			limpar_buffer();
 			break;
@@ -86,9 +89,10 @@ int cadastro(){
 
 	while(1){
 		printf("\nDigite sua senha: ");
-		fgets(senha, sizeof(senha), stdin);
+		fgets( senha, sizeof(senha), stdin);
 		senha[strcspn(senha, "\n")] = '\0';
 		
+		//função para cadastro de senha(6 caracteres numericos)
 		if(valida_senha(senha)){
 			break;
 		}
@@ -96,13 +100,15 @@ int cadastro(){
 		limpar_buffer(); //problema aqui
 	}
 	
+	//gerador de id
 	int id = cadastra_id();
 	
+	//abre o arquivo de texto
 	FILE *usuarios;
 	usuarios = fopen("usuarios.txt","a");
 	fprintf(usuarios, "%d;%s;%s;%s\n", id,nome, cpf, senha);
 	fclose(usuarios);
 	
 	printf("\nUsuario cadastrado\n");
-	return 0;
+	return id;
 }

@@ -33,7 +33,8 @@ int verifica_usuario(char cpf[],char senha[]){
 }
 
 int login(){
-	char cpf[12], senha[7];
+	char cpf[12], senha[7], linha[200];
+	int id;
 	
 	while(1){	
 		printf("\nDigite seu cpf: ");
@@ -42,7 +43,7 @@ int login(){
 		limpar_buffer();
 		
 		printf("\nDigite sua senha: ");
-		fgets(senha, sizeof(senha), stdin);
+		fgets( senha, sizeof(senha), stdin);
 		senha[strcspn(senha, "\n")] = '\0';
 		
 		if(verifica_usuario(cpf,senha)){
@@ -51,7 +52,22 @@ int login(){
 		printf("\nCPF e/ou senha nao encontrados\n");
 	}
 	
+	
+	//busca o id e retorna para funcao main
+	FILE *usuarios;
+	usuarios = fopen("usuarios.txt","r");
+	while(fgets(linha, sizeof(linha), usuarios) != NULL){
+		char *fid = strtok(linha, ";");
+		char *nome = strtok(NULL, ";");
+		char *registro = strtok(NULL, ";");
+		
+		if(strcmp(registro,cpf) == 0){
+			id = atoi(fid);
+			break;
+		}
+	}
+	fclose(usuarios);
+	
 	printf("\nBem vindo ao site!\n");
-	return 1;
+	return id;
 }
-
