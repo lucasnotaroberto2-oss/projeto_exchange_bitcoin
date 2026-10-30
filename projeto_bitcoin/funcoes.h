@@ -7,4 +7,6 @@ int verifica_senha(int id);
 int consulta_saldo(int id);
 int deposito(int id);
 int saque(int id);
+int cotacao();
+
 

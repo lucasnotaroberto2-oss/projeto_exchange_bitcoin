@@ -4,8 +4,6 @@
 #include <ctype.h>
 #include <time.h>
 
-//fazer a funcao para escrita de extrato bem aqui
-
 int deposito(int id){
 	char linha[200];
 	int encontrado = 0;

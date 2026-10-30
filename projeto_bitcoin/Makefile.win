@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o login.o cadastro.o limpar_buffer.o cria_conta.o mostra_usuario.o consulta_saldo.o deposito.o verifica_senha.o saque.o
-LINKOBJ  = main.o login.o cadastro.o limpar_buffer.o cria_conta.o mostra_usuario.o consulta_saldo.o deposito.o verifica_senha.o saque.o
+OBJ      = main.o login.o cadastro.o limpar_buffer.o cria_conta.o mostra_usuario.o consulta_saldo.o deposito.o verifica_senha.o saque.o cotacao.o compra.o
+LINKOBJ  = main.o login.o cadastro.o limpar_buffer.o cria_conta.o mostra_usuario.o consulta_saldo.o deposito.o verifica_senha.o saque.o cotacao.o compra.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -53,3 +53,9 @@ verifica_senha.o: verifica_senha.c
 
 saque.o: saque.c
 	$(CC) -c saque.c -o saque.o $(CFLAGS)
+
+cotacao.o: cotacao.c
+	$(CC) -c cotacao.c -o cotacao.o $(CFLAGS)
+
+compra.o: compra.c
+	$(CC) -c compra.c -o compra.o $(CFLAGS)

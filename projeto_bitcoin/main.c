@@ -61,13 +61,19 @@ int inicio(id){
 			saque(id);
 		}
 		else if(entrada == 5){
+			if(!verifica_senha(id)){
+				continue;
+			}
 			//funcao para compra
 		}
 		else if(entrada == 6){
+			if(!verifica_senha(id)){
+				continue;
+			}
 			//funcao para venda
 		}
 		else if(entrada == 7){
-			//funcao para mostrar cotacao
+			cotacao(); 
 		}
 		else if(entrada == 8){
 			return 0;
@@ -78,3 +84,8 @@ int inicio(id){
 		}
 	}
 }
+
+//a fazer:
+//2 - funcoes de compra e venda com as taxas por moeda
+//3 - fazer os extratos e coloca-los em um arquivo para extratos
+
